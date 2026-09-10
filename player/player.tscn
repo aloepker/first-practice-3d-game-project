@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dns5xk5dg63p2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fdjtx"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_0ox0n"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_0ox0n"]
+size = Vector3(0.1, 0.1, 1)
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1674143611]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1517052943]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_fdjtx")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=951969027]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6036137, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2147050103]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_0ox0n")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=507560912]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.9990482, -0.043619387, 0, 0.043619383, 0.99904823, -0.013606735, 1.411489, -0.67821944)
+visible = false
+mesh = SubResource("BoxMesh_0ox0n")
