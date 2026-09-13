@@ -1,5 +1,7 @@
 extends CharacterBody3D
-
+# hide the mouse cursor
+func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 # detect mouse movements and move camera acordingly
 func _unhandled_input(event):
@@ -9,3 +11,6 @@ func _unhandled_input(event):
 		%Camera3D.rotation_degrees.x = clamp(
 			%Camera3D.rotation_degrees.x, -80.0, 80.0 
 		)
+	elif event.is_action_pressed("ui_cancel"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
