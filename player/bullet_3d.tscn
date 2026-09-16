@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://cov8h4rq1ngy1"]
 
-[ext_resource type="PackedScene" uid="uid://k511lkskg5i8" path="res://player/projectile/projectile_model.glb" id="1_kixxk"]
+[ext_resource type="PackedScene" uid="uid://d250id2hbn1uw" path="res://player/projectile/projectile_3d.tscn" id="1_kixxk"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0ox0n"]
+radius = 0.4151838
 
 [node name="Bullet3D" type="Area3D" unique_id=1474267993]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=911497730]
 shape = SubResource("SphereShape3D_0ox0n")
 
-[node name="projectile_model" parent="." unique_id=1529449080 instance=ExtResource("1_kixxk")]
+[node name="projectile3D" parent="." unique_id=1529449080 instance=ExtResource("1_kixxk")]
