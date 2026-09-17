@@ -8,6 +8,8 @@ radius = 0.4151838
 [node name="Bullet3D" type="Area3D" unique_id=1474267993]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=911497730]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("SphereShape3D_0ox0n")
 
 [node name="projectile3D" parent="." unique_id=1529449080 instance=ExtResource("1_kixxk")]
+transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, 0, 0, 0)
