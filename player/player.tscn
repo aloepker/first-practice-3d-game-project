@@ -26,8 +26,7 @@ transform = Transform3D(-0.37, 0, 1.13246855e-07, 0, 0.364, 0, -5.5868448e-08, 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50497377, -0.3778869, -1.2449313)
 
 [node name="Bullet3D" parent="Camera3D/Marker3D" unique_id=1474267993 instance=ExtResource("3_yw30f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50497377, 1.2178273, -1.2469825)
-top_level = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.007899523, -0.002051115)
 
 [node name="Reticle" type="TextureRect" parent="." unique_id=351028195]
 anchors_preset = 8
