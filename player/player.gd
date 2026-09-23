@@ -43,8 +43,8 @@ func _physics_process(delta):
 	
 	move_and_slide()
 	
-	#shooting code added to player physics:
-	if Input.is_action_just_pressed("shoot"):
+	#shooting code added to player physics. also updated this to link to a timer for automatic bullet fire
+	if Input.is_action_pressed("shoot") and %Timer.is_stopped():
 		shoot_bullet() 
 	
 #code/function for firing the bullet! :D
@@ -56,3 +56,5 @@ func shoot_bullet():
 	# now we need to add code to move the bullet to the reticle (and orient as well)
 	#bellow line moves the bullet towards the marker
 	new_bullet.global_transform = %Marker3D.global_transform
+	
+	%Timer.start()
