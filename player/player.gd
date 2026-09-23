@@ -42,3 +42,17 @@ func _physics_process(delta):
 		velocity.y = 0.0	
 	
 	move_and_slide()
+	
+	#shooting code added to player physics:
+	if Input.is_action_just_pressed("shoot"):
+		shoot_bullet() 
+	
+#code/function for firing the bullet! :D
+func shoot_bullet():
+	#load bullet from file system
+	const BULLET_3D = preload("res://player/bullet_3d.tscn")
+	var new_bullet = BULLET_3D.instantiate()
+	%Marker3D.add_child(new_bullet)
+	# now we need to add code to move the bullet to the reticle (and orient as well)
+	#bellow line moves the bullet towards the marker
+	new_bullet.global_transform = %Marker3D.global_transform
