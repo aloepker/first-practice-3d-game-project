@@ -13,3 +13,4 @@ func _physics_process(delta):
 	travelled_distance += SPEED * delta
 	if travelled_distance > RANGE:
 		queue_free()
+# bullet direction fixed itself.. lol
