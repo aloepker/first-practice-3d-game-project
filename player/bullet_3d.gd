@@ -1,7 +1,7 @@
 extends Area3D
 
 # to move the bullet:
-const SPEED = 20.0
+const SPEED = 30.0
 const RANGE = 40.0
 
 var travelled_distance = 0.0
