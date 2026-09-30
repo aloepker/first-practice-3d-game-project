@@ -12,7 +12,8 @@ func _physics_process(delta):
 	var direction = global_position.direction_to(player.global_position)
 	direction.y = 0.0
 	linear_velocity = direction * speed
-
+	#code to rotate the bat towards the player
+	bat_model.rotation.y = Vector3.FORWARD.signed_angle_to(direction, Vector3.UP) + PI
 
 func take_damage():
 	bat_model.hurt()
