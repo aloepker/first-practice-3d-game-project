@@ -45,7 +45,6 @@ animation = &"Idle"
 mix_mode = 1
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_0ox0n"]
-graph_offset = Vector2(-121.38483, -20.491684)
 nodes/output/position = Vector2(600, 160)
 nodes/Idle/node = SubResource("AnimationNodeAnimation_vgr6s")
 nodes/Idle/position = Vector2(100, 80)
@@ -59,22 +58,19 @@ node_connections = [&"output", 0, &"OneShot", &"OneShot", 0, &"Idle", &"OneShot"
 script = ExtResource("2_vgr6s")
 
 [node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(1644333598) index="0" unique_id=2079112780]
-bones/0/position = Vector3(0, -0.007400004, 0)
-bones/1/rotation = Quaternion(-0.028654926, 0.18848532, -0.6867176, 0.7014778)
-bones/2/rotation = Quaternion(-0.056015443, -0.016041048, 0.27483782, 0.9597235)
-bones/3/rotation = Quaternion(0.04121358, 0.059984986, 0.2647528, 0.96156603)
-bones/4/rotation = Quaternion(-0.028654926, -0.18848532, 0.6867176, 0.7014778)
-bones/5/rotation = Quaternion(-0.056015443, 0.016041048, -0.27483782, 0.9597235)
-bones/6/rotation = Quaternion(0.04121358, -0.059984986, -0.2647528, 0.96156603)
+bones/0/position = Vector3(0, 0.021677962, 0)
+bones/1/rotation = Quaternion(0.13794063, 0.029313702, -0.6616188, 0.7364602)
+bones/2/rotation = Quaternion(0.15741542, 0.06408428, 0.3706004, 0.9131095)
+bones/3/rotation = Quaternion(0.16696306, 0.1141376, 0.3485784, 0.9151989)
+bones/4/rotation = Quaternion(0.13794063, -0.029313702, 0.6616188, 0.7364602)
+bones/5/rotation = Quaternion(0.15741542, -0.06408428, -0.3706004, 0.9131095)
+bones/6/rotation = Quaternion(0.16696306, -0.1141376, -0.3485784, 0.9151989)
 bones/7/position = Vector3(0.1309921, -0.22739176, -0.087851465)
 bones/7/rotation = Quaternion(0.26196837, 0.08345512, 0.26575127, 0.9240044)
-bones/8/rotation = Quaternion(3.8433356e-08, 0.69088244, 0.72296715, 1.6451473e-08)
+bones/8/rotation = Quaternion(3.441235e-08, 0.68210196, 0.7312571, 2.1265889e-08)
 bones/10/position = Vector3(-0.1309921, -0.22739176, -0.087851465)
 bones/10/rotation = Quaternion(0.26196837, -0.083455116, -0.26575127, 0.9240044)
-bones/11/rotation = Quaternion(2.5423756e-08, 0.69088244, 0.72296715, 3.637758e-08)
-
-[node name="bat" parent="Armature/Skeleton3D" index="0" unique_id=1450876937]
-transform = Transform3D(1, 0, 0, 0, 0.67999995, 0, 0, 0, 1, 0, 0, 0)
+bones/11/rotation = Quaternion(2.3243624e-08, 0.68210196, 0.7312571, 4.1953907e-08)
 
 [node name="AnimationPlayer" parent="." index="1" unique_id=563622237]
 libraries/custom = SubResource("AnimationLibrary_030dj")
