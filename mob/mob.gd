@@ -2,6 +2,8 @@ extends RigidBody3D
 
 var speed = randf_range(2.0, 4.0)
 
+var health = 3
+
 @onready var bat_model = %bat_model
 
 @onready var player = get_node("/root/Game/Player")
@@ -17,3 +19,8 @@ func _physics_process(delta):
 
 func take_damage():
 	bat_model.hurt()
+	health -= 1
+	
+	if health == 0:
+		set_physics_process(false)
+		
