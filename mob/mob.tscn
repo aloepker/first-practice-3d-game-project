@@ -16,3 +16,10 @@ shape = SubResource("SphereShape3D_0ox0n")
 
 [node name="bat_model" parent="." unique_id=120056570 instance=ExtResource("1_7b8ug")]
 unique_name_in_owner = true
+
+[node name="Timer" type="Timer" parent="." unique_id=425456975]
+unique_name_in_owner = true
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
