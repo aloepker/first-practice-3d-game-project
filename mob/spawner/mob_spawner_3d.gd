@@ -5,6 +5,8 @@ extends Node3D
 @onready var marker_3d: Marker3D = %Marker3D
 @onready var timer: Timer = %Timer
 
-# timer to spawn bats for the mob attacking the player
+# timer to spawn bats for the mob attacking the player from spawners
 func _on_timer_timeout():
-	preload("res://mob/mob.tscn")	
+	var new_mob = mob_to_spawn.instantiate()
+	add_child(new_mob)	
+	new_mob.global_position = Marker3D.global_position
