@@ -4,6 +4,8 @@ var speed = randf_range(2.0, 4.0)
 
 var health = 3
 
+signal died
+
 @onready var bat_model = %bat_model
 
 @onready var timer: Timer = %Timer
@@ -34,6 +36,7 @@ func take_damage():
 		apply_central_impulse(direction * 10.0 + random_upward_force)
 		timer.start()
 		lock_rotation = false		
+		died.emit()
 
 
 func _on_timer_timeout():

@@ -2,9 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://dns5xk5dg63p2" path="res://player/player.tscn" id="1_80nbo"]
 [ext_resource type="Material" uid="uid://b8xepkfsmcceb" path="res://level/green block material.tres" id="1_feb5d"]
+[ext_resource type="Script" uid="uid://is0cnd2xo1vf" path="res://game.gd" id="1_ryrav"]
 [ext_resource type="Material" uid="uid://dwkiejroe1ho3" path="res://level/yellow bridge block material.tres" id="3_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://dpbl8w0mx1cs3" path="res://mob/mob.tscn" id="4_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://cupxspq3165k5" path="res://mob/spawner/mob_spawner_3d.tscn" id="5_7jktm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0ox0n"]
+font_size = 50
 
 [sub_resource type="Environment" id="Environment_fdjtx"]
 background_mode = 1
@@ -16,10 +20,19 @@ fog_light_color = Color(0.10672296, 0.4941553, 0.7537567, 1)
 fog_height = -2.3
 fog_height_density = 0.33
 
-[sub_resource type="LabelSettings" id="LabelSettings_0ox0n"]
-font_size = 50
-
 [node name="Game" type="Node3D" unique_id=783062821]
+script = ExtResource("1_ryrav")
+
+[node name="MobSpawner3D" parent="." unique_id=597234274 instance=ExtResource("5_7jktm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -13)
+
+[node name="Label" type="Label" parent="." unique_id=1665379559]
+offset_left = 60.0
+offset_top = 56.0
+offset_right = 249.0
+offset_bottom = 125.0
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_0ox0n")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1363757846]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
@@ -208,13 +221,4 @@ material = ExtResource("3_fc0e3")
 [node name="Mob" parent="." unique_id=1570425237 instance=ExtResource("4_fc0e3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10772467, 0.9123521, -6.7191944)
 
-[node name="MobSpawner3D" parent="." unique_id=597234274 instance=ExtResource("5_7jktm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -13)
-
-[node name="Label" type="Label" parent="." unique_id=1665379559]
-offset_left = 60.0
-offset_top = 56.0
-offset_right = 249.0
-offset_bottom = 125.0
-text = "Score: 0"
-label_settings = SubResource("LabelSettings_0ox0n")
+[connection signal="mob_spawned" from="MobSpawner3D" to="." method="_on_mob_spawner_3d_mob_spawned"]
