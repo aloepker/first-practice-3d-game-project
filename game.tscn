@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cupxspq3165k5" path="res://mob/spawner/mob_spawner_3d.tscn" id="5_7jktm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0ox0n"]
-font_size = 50
+font_size = 96
 
 [sub_resource type="Environment" id="Environment_fdjtx"]
 background_mode = 1
@@ -27,6 +27,7 @@ script = ExtResource("1_ryrav")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -13)
 
 [node name="Label" type="Label" parent="." unique_id=1665379559]
+unique_name_in_owner = true
 offset_left = 60.0
 offset_top = 56.0
 offset_right = 249.0
