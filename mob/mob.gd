@@ -26,6 +26,7 @@ func take_damage():
 		return
 		
 	bat_model.hurt()
+	%AudioStreamPlayer3DDamage.play()
 	health -= 1
 	
 	if health == 0:
@@ -36,6 +37,7 @@ func take_damage():
 		apply_central_impulse(direction * 10.0 + random_upward_force)
 		timer.start()
 		lock_rotation = false		
+		%AudioStreamPlayer3DKO.play()
 		died.emit()
 
 
