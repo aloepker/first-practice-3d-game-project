@@ -6,6 +6,8 @@
 [ext_resource type="Material" uid="uid://dwkiejroe1ho3" path="res://level/yellow bridge block material.tres" id="3_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://cupxspq3165k5" path="res://mob/spawner/mob_spawner_3d.tscn" id="5_7jktm"]
 
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_fdjtx"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_0ox0n"]
 font_size = 96
 
@@ -21,6 +23,16 @@ fog_height_density = 0.33
 
 [node name="Game" type="Node3D" unique_id=783062821]
 script = ExtResource("1_ryrav")
+
+[node name="Player" parent="." unique_id=1674143611 instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="KillPlane" type="Area3D" parent="." unique_id=771874092]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7, 0)
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KillPlane" unique_id=83087691]
+shape = SubResource("WorldBoundaryShape3D_fdjtx")
 
 [node name="MobSpawner3D" parent="." unique_id=597234274 instance=ExtResource("5_7jktm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -13)
@@ -87,9 +99,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.599999, -5, -13.3)
 use_collision = true
 size = Vector3(10, 10, 10)
 material = ExtResource("1_feb5d")
-
-[node name="Player" parent="." unique_id=1674143611 instance=ExtResource("1_80nbo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1840195119]
 transform = Transform3D(0.533834, 0.82928133, -0.16526955, -0.13802287, 0.27828315, 0.95053047, 0.8342489, -0.4846144, 0.26301664, 0, 8.3, 0)
