@@ -57,4 +57,6 @@ func shoot_bullet():
 	#bellow line moves the bullet towards the marker
 	new_bullet.global_transform = %Marker3D.global_transform
 	
+	%AudioStreamPlayer.play()
+	
 	%Timer.start()
