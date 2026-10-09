@@ -11,3 +11,8 @@ func increase_score():
 # function called when a new mob is spawned via signal
 func _on_mob_spawner_3d_mob_spawned(mob):
 	mob.died.connect(increase_score) 
+
+
+#code to "kill" the player when they fall off the edge
+func _on_kill_plane_body_entered(body: Node3D) -> void:
+	get_tree().reload_current_scene.call_deferred()
