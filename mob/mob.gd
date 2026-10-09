@@ -7,6 +7,8 @@ var health = 3
 signal died
 
 @onready var bat_model = %bat_model
+@onready var enemy_damage: AudioStreamPlayer3D = %AudioStreamPlayer3DDamage
+@onready var enemy_ko: AudioStreamPlayer3D = %AudioStreamPlayer3DKO
 
 @onready var timer: Timer = %Timer
 
@@ -26,7 +28,7 @@ func take_damage():
 		return
 		
 	bat_model.hurt()
-	%AudioStreamPlayer3DDamage.play()
+	enemy_damage.play()
 	health -= 1
 	
 	if health == 0:
@@ -37,7 +39,7 @@ func take_damage():
 		apply_central_impulse(direction * 10.0 + random_upward_force)
 		timer.start()
 		lock_rotation = false		
-		%AudioStreamPlayer3DKO.play()
+		enemy_ko.play()
 		died.emit()
 
 
