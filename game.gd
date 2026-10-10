@@ -26,6 +26,6 @@ func _on_mob_spawner_3d_mob_spawned(mob):
 
 
 #code to "kill" the player when they fall off the edge
-func _on_kill_plane_body_entered(body: Node3D) -> void:
+func _on_kill_plane_body_entered(_body: Node3D) -> void:
 	#customize by adding a red death screen and a timer before the reload current scene call
 	get_tree().reload_current_scene.call_deferred()

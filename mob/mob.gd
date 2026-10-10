@@ -16,7 +16,7 @@ signal died
 
 
 #sets physics for the node for each frame
-func _physics_process(delta):
+func _physics_process(_delta):
 	var direction = global_position.direction_to(player.global_position)
 	direction.y = 0.0
 	linear_velocity = direction * speed
