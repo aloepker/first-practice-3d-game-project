@@ -17,7 +17,10 @@ func puff_cloud(mob_global_position):
 
 # function called when a new mob is spawned via signal
 func _on_mob_spawner_3d_mob_spawned(mob):
-	mob.died.connect(increase_score) 
+	mob.died.connect(func when_mob_dies():
+		increase_score()
+		puff_cloud(mob.global_position)
+		) 
 	puff_cloud(mob.global_position)
 
 
