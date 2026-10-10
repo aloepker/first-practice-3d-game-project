@@ -40,8 +40,9 @@ func take_damage():
 		timer.start()
 		lock_rotation = false		
 		enemy_ko.play()
-		died.emit()
+		
 
 
 func _on_timer_timeout():
 	queue_free()
+	died.emit()
