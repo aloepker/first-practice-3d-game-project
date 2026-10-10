@@ -21,6 +21,7 @@ func _on_mob_spawner_3d_mob_spawned(mob):
 		increase_score()
 		puff_cloud(mob.global_position)
 		) 
+		#this may be causing the game to crash after getting a few kills now.. >.<
 	puff_cloud(mob.global_position)
 
 
